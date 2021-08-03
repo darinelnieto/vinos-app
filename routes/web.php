@@ -17,15 +17,17 @@ Route::get('/', function () {
     return view('home');
 });
 
+// rEI}gV@9Cg;- 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/login', 'LoginController@login')->name('login');
+Route::get('/login', 'UserController@login')->name('login');
 
-Route::post('/appVinosAdmin/login', 'loginController@logeado')->name('validacion');
+Route::post('/appVinosAdmin/login', 'UserController@logeado')->name('validacion');
 
-Route::get('/appVinosAdmin', 'loginController@validado')->name('appVinosAdmin');
+Route::get('/appVinosAdmin', 'UserController@validado')->name('appVinosAdmin');
 
 Route::get('/listaProductos', 'ProductController@index')->name('listaProductos');
 

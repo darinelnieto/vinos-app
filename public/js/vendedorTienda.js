@@ -10,6 +10,7 @@ $('.cantidadBTN').on('click', function(e){
 // ellemento donde cargan los productos enlistados con jquery
 var imprime = document.getElementById('datos');
 var ids = [];
+var key = 0;
 // función ajax para pedir y mostrar datos de los productos que se pretende vender 
 $('.formSearchProductVenta').on('submit', function(e){
     var respuesta = $('.listProduct').val();
@@ -50,11 +51,12 @@ function cantidadProducto(){
 }
 function datosStorage(){
     var datosLocal = localStorage.getItem('skuProduct');
+    key++;
     var cantidad = localStorage.getItem('unidades');
     var dataJson = JSON.parse(datosLocal);
         for(item of dataJson){
             $('#muestraProductos').append(`
-                <tr class="${item.id}" style="height:47px;">
+                <tr class="${key}" style="height:47px;">
                     <td>
                         <form method="post" class="venta${item.id}">
                             <input type="hidden" class="sku${item.sku}" value="${item.sku}" name="sku">
@@ -63,7 +65,7 @@ function datosStorage(){
                     </td>
                     <td width="40%" class="pl-3">${item.name}</td>
                     <td width="20%">${item.sku}</td>
-                    <td class="cantidad text-center" width="6%"><input type="hidden" class="unidades"  value="${cantidad}">${cantidad}</td>
+                    <td class="cantidad text-center" width="6%"><input type="hidden" class="unidades${key}"  value="${cantidad}">${cantidad}</td>
                     <td width="13%" class="text-left pl-5">${item.price}</td>
                     <td class="total text-left pl-5" width="13%"></td>
                     <td width="20%" class="text-center"><a href="#" class="btn btn-danger delet"><i class="far fa-trash-alt"></i></a></td>
@@ -83,9 +85,10 @@ function finalizaventa(){
     $('.stock'+item.id).val(totalCantidad);
 }
 function total(){
-    var unidad = $('.unidades').val();
+    
+    var unidad = $('.unidades'+key).val();
     var suma = unidad * item.price;
-    $('.'+item.id+'>.total').html(`${suma}`);
+    $('.'+key+'>.total').html(`${suma}`);
 }
 
 // arrojando valor total de la venta
@@ -112,6 +115,9 @@ function operation(){
 function delet(){
     $('.delet').on('click', function(e){
         $(this).parent().parent().remove();
+        if($(this).parent().parent().remove()){
+            alert('se elimino correctamente el articulo con id'+$(this).parent().parent());
+        }
         e.preventDefault();
         operation();
     });
@@ -145,6 +151,7 @@ function controllerVenta(){
 // busqueda de productos por nombre 
 $('.searchNameProduct').on('submit', function(e){
     var nombre = $('.nameSearch').val();
+    cantidadProducto();
     $.ajax({
         type:'GET',
         url:"api/productos/busqueda",
@@ -152,6 +159,14 @@ $('.searchNameProduct').on('submit', function(e){
     }).done(function(res){
         var dataStore = JSON.stringify(res);
         localStorage.setItem('skuProduct', dataStore);
+         // Se guarda id en localStorage para recuperarlo en la siguiente l´nea de código y enviarlo al array ids
+         localStorage.setItem('id', res[0]['id']);
+         // se recupera id del producto, se usará para identificar el producto a descontar de la base de datos
+         var idis = localStorage.getItem('id');
+         // cantidades se usará para las cantidades a descontar
+         var cant = localStorage.getItem('unidades');
+         ids.push({key:key, 'id':idis, 'cantidad':cant});
+         console.log(ids);
         recibeProduct();
     });
     $('.searchNameProduct')[0].reset();
@@ -200,7 +215,7 @@ $('.cancelarVenta').on('click', function(e){
     $('.tbodyVentas').children().remove();
     $(this).parent().parent().css({'display':'none'});
     localStorage.clear();
-    ids.pop();
+    location.reload();
     e.preventDefault();
 });
 
@@ -222,7 +237,7 @@ $('.confirmaVenta').on('click', function(e){
         });
     }
     e.preventDefault();
-    ids.pop();
+    location.reload();
     $('.tbodyVentas').children().remove();
     $('.pieTabla').css({'display':'none'});
     $('.contentFormFinalVentaTC').css({'display':'none'});

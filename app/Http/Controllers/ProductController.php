@@ -88,6 +88,10 @@ class ProductController extends Controller
             $descuenta->stock = $descuenta->stock - $request->sales;
 
             $descuenta->save();
+
+            $order = Order::where('id', '!=', 0)->orderBy('id', 'desc')->take(1)->get();
+            $product = Product::find($request->id);
+            $product->orders()->attach($order, ['cantidad' => $request->sales]);
         }
     }
 }

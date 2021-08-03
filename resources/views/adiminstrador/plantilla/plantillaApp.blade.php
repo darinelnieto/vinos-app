@@ -35,10 +35,10 @@
             <div class="logoApp">
                 <img src="{{asset('img/logo-vino-03.png')}}" alt="Logo vino la leyenda" class="imgLogoApp">
             </div>
-            <nav class="control">
-                <ul class="nav flex-column ulControl">
-                    <li class="nav-item itemUsuarios">
-                        <a href="{{route('appVinosAdmin')}}" class="nav-link active"><span><i class="fas fa-user-tie"></i></span><span class="nombre ItemMenu"> Usuarios</span></a>
+            <nav>
+                <ul class="nav ulControl">
+                    <li class="nav-item active itemUsuarios">
+                        <a href="{{route('appVinosAdmin')}}" class="nav-link"><span><i class="fas fa-user-tie"></i></span><span class="nombre ItemMenu"> Usuarios</span></a>
                     </li>
                     <li class="nav-item dropdown itemInventario">
                         <a class="nav-link dropdown-toggle usuarios" data-toggle="dropdown" href="#">

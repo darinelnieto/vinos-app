@@ -86,6 +86,7 @@
 }
 .ulControl{
     list-style: none;
+    padding-left: 30px;
     li a{
         color: #777;
         cursor: pointer;
@@ -143,7 +144,7 @@ table{
     top: 4px;
     left: 7px;
 }
-.nav-link:hover, .nav-link:focus, .nav-link.active, .dropdown-item.active, .dropdown-item.active, .dropdown-item:hover{
+.nav-item.active > a{
     color: #4b0c14;
     background-color: white;
 }

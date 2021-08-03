@@ -9,7 +9,7 @@ class Order extends Model
     /**
      * Relacion Modelo Product
      */
-    public function orders()
+    public function products()
     {
         return $this->belongsToMany('App\Product')->withTimestamps();
     }
