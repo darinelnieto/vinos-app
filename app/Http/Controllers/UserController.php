@@ -35,7 +35,7 @@ class UserController extends Controller
         
         $usuarios = DB::table('users')->paginate(10);
 
-        return view('appVinosAdmin', compact('usuarios', 'productos'));
+        return view('appVinosAdmin', compact('usuarios'));
 
     }
 
