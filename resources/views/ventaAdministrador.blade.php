@@ -47,6 +47,7 @@
                 <div class="btnCotrolaTabla">
                     <a href="#" class="cancelarVenta">Cancelar vanta</a>
                     <a href="#" class="botonFinalizaCompra" data-toggle="modal" data-target="#modalFinCompra">Finalizar compra</a>
+                    <a href="{{route('consulta')}}">Consulta</a>
                 </div>
                 <div class="tfooter"></div>
                 @include('VendedorPV.plantillaVP.finalizaVentaEfectivo')
@@ -55,4 +56,22 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    $('.botonFinalizaCompra').on('click', function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url:'orden/nueva',
+            method:'get',
+            data:{
+                user_id:{{Auth::user()->id}}
+            }
+        });
+        e.preventDefault();
+    });
+</script>
 @endsection

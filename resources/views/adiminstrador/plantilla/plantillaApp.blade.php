@@ -37,7 +37,7 @@
             </div>
             <nav>
                 <ul class="nav ulControl">
-                    <li class="nav-item active itemUsuarios">
+                    <li class="nav-item itemUsuarios">
                         <a href="{{route('appVinosAdmin')}}" class="nav-link"><span><i class="fas fa-user-tie"></i></span><span class="nombre ItemMenu"> Usuarios</span></a>
                     </li>
                     <li class="nav-item dropdown itemInventario">

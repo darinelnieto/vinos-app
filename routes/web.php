@@ -58,3 +58,5 @@ Route::post('decuenta/stock', 'ProductController@descuenta')->name('descuenta.st
 Route::get('orden/nueva', 'OrderController@store')->name('order.new');
 
 Route::put('venta/guardada', 'ProductController@venta')->name('venta.guardada');
+
+Route::get('/consulta', 'OrderController@consultaVenta')->name('consulta');
