@@ -283,3 +283,28 @@
     height: 87vh;
     padding: 1.7%;
 }
+//===========================Cuadre de caja==========================
+.fondoFormularioCuadreCaja{
+    background-image:url('/img/img-fondo-form-03.png');
+    background-position: center;
+    background-size: 66%;
+    padding: 1% 12px;
+}
+.theadFormCuadreCaja{
+    background:#ede1cb;
+    border:2px solid #d8e0e4;
+    td{
+        padding: 0% 2.5%;
+    }
+}
+.tbodyFomCuadreCaja{
+    border:2px solid #d8e0e4;
+    td{
+        padding: .9% 2.5%;
+        input{
+            width:50px;
+            border: 1.5px solid #d8e0e4;
+            height: 25px;
+        }
+    }
+}

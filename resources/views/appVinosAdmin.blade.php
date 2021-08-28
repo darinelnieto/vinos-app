@@ -2,8 +2,8 @@
     @include('adiminstrador/administrador')
 @endif
 @if(Auth::user()->rol === "Vendedor Tienda")
-@include('VendedorPV/vendedorTienda')
+    @include('VendedorPV/formcuadreCaja')
 @endif
 @if(Auth::user()->rol === "Vendedor Redes Sociales")
-@include('VendedorPV/vendedorTienda')
+    @include('VendedorPV/vendedorTienda')
 @endif

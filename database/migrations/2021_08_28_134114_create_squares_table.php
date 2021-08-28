@@ -17,6 +17,7 @@ class CreateSquaresTable extends Migration
             $table->id();
             $table->string('data');
             $table->string('time');
+            $table->integer('fifty');
             $table->integer('oneHundred');
             $table->integer('twoHundred');
             $table->integer('fiveHundred');

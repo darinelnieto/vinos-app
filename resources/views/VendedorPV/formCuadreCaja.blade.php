@@ -9,10 +9,8 @@
                         <h4>Hora: <span class="hora"></span></h4>
                     </div>
                 </div>
-                <div class="col-sm-12 col-lg-12 col-xl-12">
-                    <form action="" class="cuadreCajaInicial">
-
-                    </form>
+                <div class="col-sm-12 col-lg-12 col-xl-12 fondoFormularioCuadreCaja">
+                    @include('VendedorPV.plantillaVP.FormularioCuadreCaja')
                 </div>
             </div>
         </div>
