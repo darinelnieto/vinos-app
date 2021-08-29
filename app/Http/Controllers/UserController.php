@@ -11,10 +11,10 @@ use App\User;
 class UserController extends Controller
 {
 
-    function login(){
-        
+    function login(){       
         return view('login');
     }
+    
     function logeado(Request $request){
         // login app
        $validacion = request()->only('email', 'password');

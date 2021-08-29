@@ -29,6 +29,7 @@ class CreateSquaresTable extends Migration
             $table->integer('twentyThousand');
             $table->integer('fiftyThousand');
             $table->integer('hundredThousand');
+            $table->timestamps();
         });
     }
 

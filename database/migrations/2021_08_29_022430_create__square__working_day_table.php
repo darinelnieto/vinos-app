@@ -15,12 +15,6 @@ class CreateSquareWorkingDayTable extends Migration
     {
         Schema::create('_square__working_day', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('square_id')->constrained('squares')
-                    ->onDelete('cascade')
-                    ->onUpdate('cascade');
-            $table->foreignId('working_day_id')->constrained('working_days')
-                    ->onDelete('cascade')
-                    ->onUpdate('cascade');
             $table->timestamps();
         });
     }
