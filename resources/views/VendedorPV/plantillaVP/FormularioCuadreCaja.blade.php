@@ -116,4 +116,20 @@
     </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    $('.guardar').on('click', function(){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url:'working/day',
+            method:'get',
+            data:{
+                user_id:{{Auth::user()->id}}
+            }
+        });
+    });
+</script>
 <script src="{{asset('js/cuadreCaja.js')}}"></script>

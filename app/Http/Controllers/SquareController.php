@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Square;
 use Illuminate\Http\Request;
+use App\WorkingDay;
+use App\Order;
 
 class SquareController extends Controller
 {
@@ -76,7 +78,7 @@ class SquareController extends Controller
             $cuadre->hundredThousand = $request->hundredThousand;
             $cuadre->save();
         }else{
-            $request->save();
+            $cuadre->save();
         }
         if($cuadre->save()){
             return view('VendedorPV/vendedorTienda');

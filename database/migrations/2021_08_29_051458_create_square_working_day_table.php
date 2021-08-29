@@ -13,7 +13,7 @@ class CreateSquareWorkingDayTable extends Migration
      */
     public function up()
     {
-        Schema::create('_square__working_day', function (Blueprint $table) {
+        Schema::create('square_working_day', function (Blueprint $table) {
             $table->id();
             $table->foreignId('square_id')->constrained('squares')
                     ->onDelete('cascade')
@@ -32,6 +32,6 @@ class CreateSquareWorkingDayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_square__working_day');
+        Schema::dropIfExists('square_working_day');
     }
 }

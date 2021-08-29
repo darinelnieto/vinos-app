@@ -63,3 +63,7 @@ Route::get('/consulta', 'OrderController@consultaVenta')->name('consulta');
 
 // cuadre de caja
 Route::post('/cuadreDeCaja', 'SquareController@create')->name('cuadre.inicial');
+
+Route::get('working/day', 'WorkingDayController@create')->name('day.working');
+
+Route::get('relaciona/working/day', 'WorkingDayController@relaciona')->name('relaciona.day.working');
