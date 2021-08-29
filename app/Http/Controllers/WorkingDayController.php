@@ -17,9 +17,11 @@ class WorkingDayController extends Controller
         }
     }
 
-    public function relaciona(){
-        $square = Square::latest('id')->first();
-        $workingDay = WorkingDay::latest('id')->first();
-        $workingDay->Squares()->attach($square);
+    public function relaciona(Request $request){
+        if($request->ajax()){
+            $square = Square::latest('id')->first();
+            $workingDay = WorkingDay::latest('id')->first();
+            $workingDay->Squares()->attach($square);
+        }
     }
 }

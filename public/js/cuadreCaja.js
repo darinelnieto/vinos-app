@@ -1,3 +1,17 @@
+$(document).ready(function(){
+    fecha = new Date();
+
+    anio = fecha.getFullYear();
+    mes = fecha.getMonth() + 1;
+    dia = fecha.getDate();
+    hora = fecha.getHours();
+    minuto = fecha.getMinutes();
+
+    $('.fechaHeader').html(`${anio}-${mes}-${dia}`);
+    $('.horaHeader').html(`${hora}:${minuto}`);
+    $('.fecha').val(`${anio}-${mes}-${dia}`);
+    $('.hora').val(`${hora}:${minuto}`);
+});
 $('.unidadCuadre').change(function(){
     mil = $(this).val() * $(this).parent().parent().children().children('input[type=hidden]').val();
      $(this).parent().parent().children('.totalCuadre').html(`${mil}`);
@@ -37,17 +51,5 @@ $('.unidadCuadre').change(function(){
 
 //  Enviar cuadre a la base de datos
 $('.guardar').on('click', function(){
-    // obtener fecha y hora
-
-    fecha = new Date();
-
-    anio = fecha.getFullYear();
-    mes = fecha.getMonth() + 1;
-    dia = fecha.getDate();
-    hora = fecha.getHours();
-    minuto = fecha.getMinutes();
-
-    $('.fecha').val(`${anio}-${mes}-${dia}`);
-    $('.hora').val(`${hora}:${minuto}`);
     $('.cuadreCajaInicial').submit();
 });

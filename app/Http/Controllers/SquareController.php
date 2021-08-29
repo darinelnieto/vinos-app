@@ -81,7 +81,11 @@ class SquareController extends Controller
             $cuadre->save();
         }
         if($cuadre->save()){
-            return view('VendedorPV/vendedorTienda');
+            $mensajeInicial = "Hola tu cuadre de caja inicial se registro éxitosamente.";
+            $mensajeInicioDos = "Te deseamos un excelente turno laboral.";
+            $mensajeFinalTurno = "Hola tu cuadre de caja inicial se registro éxitosamente";
+            $mensajeFinalDos = "Que te valla  bien.";
+            return view('VendedorPV/vendedorTienda', compact('mensajeInicial', 'mensajeInicioDos', 'mensajeFinalTurno', 'mensajeFinalDos'));
         }
     }
 }

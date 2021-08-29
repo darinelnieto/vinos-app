@@ -1,5 +1,21 @@
 @extends('VendedorPV.plantillaVP.plantilla')
 @section('mainTiendaPV')
+<meta name="csrf-token" content="{{ csrf_token() }}"></meta>
+<div class="mensaje">
+    <div class="row">
+        <div class="col-6 offset-3 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <p>{{ $mensajeInicial }}</p>
+                    <p><strong>{{ $mensajeInicioDos }}</strong></p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{route('relaciona.day.working')}}" class="cierraMensaje btn btn-dark">Iniciar turno</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-12 col-xl-12 contenido mt-4">
