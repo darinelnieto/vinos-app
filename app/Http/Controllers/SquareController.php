@@ -87,5 +87,9 @@ class SquareController extends Controller
             $mensajeFinalDos = "Que te valla  bien.";
             return view('VendedorPV/vendedorTienda', compact('mensajeInicial', 'mensajeInicioDos', 'mensajeFinalTurno', 'mensajeFinalDos'));
         }
+        
+    }
+    public function vista(){
+        return view('VendedorPV/formcuadreCaja');
     }
 }

@@ -62,6 +62,9 @@ Route::put('venta/guardada', 'ProductController@venta')->name('venta.guardada');
 Route::get('/consulta', 'OrderController@consultaVenta')->name('consulta');
 
 // cuadre de caja
+
+Route::get('Formulario/cuadre', 'SquareController@vista')->name('Formulario.cuadre');
+
 Route::post('/cuadreDeCaja', 'SquareController@create')->name('cuadre.inicial');
 
 Route::get('working/day', 'WorkingDayController@create')->name('day.working');
