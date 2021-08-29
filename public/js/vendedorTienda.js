@@ -215,7 +215,6 @@ $('.cancelarVenta').on('click', function(e){
     $('.tbodyVentas').children().remove();
     $(this).parent().parent().css({'display':'none'});
     localStorage.clear();
-    location.reload();
     e.preventDefault();
 });
 
@@ -237,7 +236,6 @@ $('.confirmaVenta').on('click', function(e){
         });
     }
     e.preventDefault();
-    location.reload();
     $('.tbodyVentas').children().remove();
     $('.pieTabla').css({'display':'none'});
     $('.contentFormFinalVentaTC').css({'display':'none'});
