@@ -11343,7 +11343,7 @@ table {
   display: flex;
   justify-content: space-between;
 }
-.botonesEnvioCuadre .guardar {
+.botonesEnvioCuadre .guardar, .botonesEnvioCuadre .cuadreFinal {
   border: none;
   border-radius: 3px;
   background: #29abe2;
@@ -11378,4 +11378,8 @@ table {
 }
 .mensaje .card .btn-dark {
   font-size: 17px;
+}
+
+#mensaje {
+  display: none;
 }

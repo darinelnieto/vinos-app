@@ -70,3 +70,9 @@ Route::post('/cuadreDeCaja', 'SquareController@create')->name('cuadre.inicial');
 Route::get('working/day', 'WorkingDayController@create')->name('day.working');
 
 Route::get('relaciona/working/day', 'WorkingDayController@relaciona')->name('relaciona.day.working');
+
+// cuadre fin turno 
+
+Route::get('/cuadreDeCajaFinal', 'SquareController@cuadreFinal')->name('cuadre.inicial.final');
+
+Route::post('final/cuadreDeCaja', 'SquareController@finaliza')->name('cuadre.final');

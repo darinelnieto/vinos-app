@@ -17,9 +17,9 @@
                     <a href="" class="sesion">{{ Auth::user()->name }} <span><i class="fas fa-user"></i></span></a>
                     <div class="sesionMenu">
                         <ul class="ulSesion mb-0">
-                            <!-- <li><a href="{{ url('/logout') }}" class="Asesion"><i class="fas fa-cash-register"></i> Cuadre caja</a></li> -->
                             <li><a href="" class="Asesion"><i class="fas fa-pencil-alt"></i> Mi perfil</a></li>
-                            <li><a href="{{ route('Formulario.cuadre') }}" class="Asesion"><i class="fas fa-cash-register"></i> Cuadre caja</a></li>
+                            <li><a href="{{ route('cuadre.inicial.final') }}" class="Asesion Cuadre"><i class="fas fa-cash-register"></i> Cuadre caja</a></li>
+                            <li><a href="{{ url('/logout') }}" class="Asesion"><i class="fas fa-power-off"></i> Cerrar sesión</a></li>
                         </ul>
                     </div>
                 </div>

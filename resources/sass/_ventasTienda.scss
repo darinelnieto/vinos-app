@@ -314,7 +314,7 @@
 .botonesEnvioCuadre{
     display: flex;
     justify-content: space-between;
-    .guardar{
+    .guardar, .cuadreFinal{
         border: none;
         border-radius: 3px;
         background:#29abe2;
@@ -349,4 +349,7 @@
             font-size: 17px;
         }
     }
+}
+#mensaje{
+    display:none;
 }
