@@ -88,7 +88,7 @@
         });
         e.preventDefault();
     });
-    $('.cierraMensaje').on('click', function(){
+    $('.cierraMensaje').on('click', function(e){
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -101,6 +101,7 @@
                 id:{{Auth::user()->id}}
             }
         });
+        e.preventDefault();
     });
 </script>
 @endsection
