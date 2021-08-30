@@ -67,12 +67,14 @@ Route::get('Formulario/cuadre', 'SquareController@vista')->name('Formulario.cuad
 
 Route::post('/cuadreDeCaja', 'SquareController@create')->name('cuadre.inicial');
 
-Route::get('working/day', 'WorkingDayController@create')->name('day.working');
-
-Route::get('relaciona/working/day', 'WorkingDayController@relaciona')->name('relaciona.day.working');
+Route::get('relaciona/working/day', 'UserController@relaciona')->name('relaciona.day.working');
 
 // cuadre fin turno 
 
 Route::get('/cuadreDeCajaFinal', 'SquareController@cuadreFinal')->name('cuadre.inicial.final');
 
 Route::post('final/cuadreDeCaja', 'SquareController@finaliza')->name('cuadre.final');
+
+// historial de usuario
+
+Route::get('historial/cuadreDeCaja', 'UserController@historialCuadre')->name('historia.cuadre.caja');

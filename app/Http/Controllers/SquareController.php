@@ -6,6 +6,7 @@ use App\Square;
 use Illuminate\Http\Request;
 use App\WorkingDay;
 use App\Order;
+use App\User;
 
 class SquareController extends Controller
 {
@@ -83,11 +84,8 @@ class SquareController extends Controller
         if($cuadre->save()){
             $mensajeInicial = "Hola tu cuadre de caja inicial se registro éxitosamente.";
             $mensajeInicioDos = "Te deseamos un excelente turno laboral.";
-            $mensajeFinalTurno = "Hola tu cuadre de caja inicial se registro éxitosamente";
-            $mensajeFinalDos = "Que te valla  bien.";
-            return view('VendedorPV/vendedorTienda', compact('mensajeInicial', 'mensajeInicioDos', 'mensajeFinalTurno', 'mensajeFinalDos'));
+            return view('VendedorPV/vendedorTienda', compact('mensajeInicial', 'mensajeInicioDos'));
         }
-        
     }
     public function vista(){
         return view('VendedorPV/formcuadreCaja');
@@ -170,4 +168,5 @@ class SquareController extends Controller
             }
         }
     }
+    
 }

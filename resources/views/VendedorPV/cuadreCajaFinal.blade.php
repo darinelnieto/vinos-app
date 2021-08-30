@@ -10,7 +10,7 @@
                         <p>¡ Ya puedes cerrar sesión !</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{route('relaciona.day.working')}}" class="cierraMensaje btn btn-dark">Entendido</a>
+                        <a href="" class="cierraMensajeFin btn btn-dark">Entendido</a>
                     </div>
                 </div>
             </div>
@@ -33,4 +33,22 @@
         </div>
     </section>
     <script src="{{asset('js/cuadreCaja.js')}}"></script>
+    <script src="{{asset('js/cuadreCajaFinal.js')}}"></script>
+    <script>
+        $('.cierraMensajeFin').on('click', function(e){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url:'relaciona/working/day',
+                method:'get',
+                data:{
+                    id:{{Auth::user()->id}}
+                }
+            });
+            e.preventDefault();
+        });
+    </script>
 @endsection

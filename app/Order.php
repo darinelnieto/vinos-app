@@ -13,4 +13,7 @@ class Order extends Model
     {
         return $this->belongsToMany('App\Product')->withTimestamps();
     }
+    public function users(){
+        return $this->belongsToMany('App\User')->withTimestamps();
+    }
 }

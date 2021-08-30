@@ -10,7 +10,7 @@
                     <p><strong>{{ $mensajeInicioDos }}</strong></p>
                 </div>
                 <div class="card-footer">
-                    <a href="{{route('relaciona.day.working')}}" class="cierraMensaje btn btn-dark">Iniciar turno</a>
+                    <a href="" class="cierraMensaje btn btn-dark">Iniciar turno</a>
                 </div>
             </div>
         </div>
@@ -87,6 +87,20 @@
             }
         });
         e.preventDefault();
+    });
+    $('.cierraMensaje').on('click', function(){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url:'relaciona/working/day',
+            method:'get',
+            data:{
+                id:{{Auth::user()->id}}
+            }
+        });
     });
 </script>
 @endsection

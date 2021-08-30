@@ -10664,6 +10664,25 @@ table {
   color: #ede1cb;
 }
 
+.modalHistorial {
+  margin: 16% auto;
+}
+
+.verHistorial {
+  padding: 0 20px;
+}
+.verHistorial p {
+  font-size: 20px;
+  padding-top: 36px;
+}
+
+.modal-footer {
+  justify-content: space-around;
+}
+.modal-footer button {
+  min-width: 150px;
+}
+
 .TH {
   background: white;
   border: 1px solid #cacaca;

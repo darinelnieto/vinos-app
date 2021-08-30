@@ -242,17 +242,6 @@ $('.confirmaVenta').on('click', function(e){
     $('#formEfectivo').css({'display':'none'});
 });
 
-// ajax relacion
 $('.cierraMensaje').on('click', function(e){
     $('.mensaje').slideUp();
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-        });
-    $.ajax({
-        url:'relaciona/working/day',
-        method:'GET'
-    });
-    e.preventDefault();
 });

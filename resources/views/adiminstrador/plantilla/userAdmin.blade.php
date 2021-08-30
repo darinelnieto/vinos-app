@@ -96,6 +96,7 @@
                         <div class="botonesAdminUser">
                             <button type="button" class="edita" data-toggle="modal" data-target="#modal{{$usuario->id}}"><i class="fas fa-pencil-alt"></i></button>
                             @include('adiminstrador.plantilla.estado')
+                            @include('adiminstrador.plantilla.historial')
                         </div>
                     </td>
                 </tr>

@@ -252,6 +252,22 @@ table{
     background:#4b0c14;
     color:#ede1cb;
 }
+.modalHistorial{
+    margin: 16% auto;
+}
+.verHistorial{
+    padding:0 20px;
+    p{
+        font-size: 20px;
+        padding-top: 36px;
+    }
+}
+.modal-footer{
+    justify-content: space-around;
+    button{
+        min-width: 150px;
+    }
+}
 //=============================style table users==========================
 .TH{
     background: white;

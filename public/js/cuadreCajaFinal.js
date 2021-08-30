@@ -57,3 +57,6 @@ function valores(){
     fiftyThousand = $('input[name=fiftyThousand]').val();
     hundredThousand = $('input[name=hundredThousand]').val();
 }
+$('.cierraMensajeFin').on('click', function(e){
+    $('.mensaje').slideUp();
+});

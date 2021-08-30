@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\paginate;
 use App\User;
+use App\Square;
 
 class UserController extends Controller
 {
@@ -86,5 +87,18 @@ class UserController extends Controller
         $estado->save();
 
         return redirect('appVinosAdmin');
+    }
+    // Relacion Cuadres de caja
+    public function relaciona(Request $request){
+        if($request->ajax()){
+            $square = Square::latest('id')->first();
+            $usuario = User::find($request->id);
+            $usuario->Squares()->attach($square);
+        }
+    }
+    public function historialCuadre(Request $request){
+        $cuadres = User::find($request->id);
+        
+        return $cuadres->Squares;
     }
 }

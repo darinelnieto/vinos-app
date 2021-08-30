@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSquareWorkingDayTable extends Migration
+class CreateOrderUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSquareWorkingDayTable extends Migration
      */
     public function up()
     {
-        Schema::create('square_working_day', function (Blueprint $table) {
+        Schema::create('order_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('square_id')->constrained('squares')
+            $table->foreignId('order_id')->constrained('orders')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
-            $table->foreignId('working_day_id')->constrained('working_days')
+            $table->foreignId('user_id')->constrained('users')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
             $table->timestamps();
@@ -32,6 +32,6 @@ class CreateSquareWorkingDayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('square_working_day');
+        Schema::dropIfExists('order_user');
     }
 }

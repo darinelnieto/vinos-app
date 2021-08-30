@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    // Relacion 
+    public function Squares(){
+        return $this->belongsToMany('App\Square')->withTimestamps();
+    }
+
+    public function orders(){
+        return $this->belongsToMany('App\Order')->withTimestamps();
+    }
 }

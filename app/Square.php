@@ -10,4 +10,9 @@ class Square extends Model
     public function working_days(){
         return $this->belongsToMany('App\WorkingDay')->withTimestamps();
     }
+
+    public function users(){
+        return $this->belongsToMany('App\User')->withTimestamps();
+    }
 }
+
