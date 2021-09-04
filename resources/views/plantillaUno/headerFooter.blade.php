@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row headerRow">
             <div class="col-3">
-                <a href="/login" class="loginRedirect"><i class="fas fa-user-tie"></i> Login</a>
+                <a href="{{route('login')}}" class="loginRedirect"><i class="fas fa-user-tie"></i> Login</a>
             </div>
             <div class="col-9">
                 <ul class="nav-bar mb-0">
