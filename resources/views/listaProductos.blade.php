@@ -72,7 +72,7 @@
                         <tbody>
                             @foreach($productos as $producto)
                         <tr class="tbody">
-                            <td class="image p-2"><img src="storage/{{ $producto->image }}" alt="" width="60px" height="60px"></td>
+                            <td class="image p-2"><img src="/storage/{{ $producto->image }}" alt="" width="60px" height="60px"></td>
                             <td class="sku"><p>{{$producto->sku}}</p></td>
                             <td class="name"><p>{{$producto->name}}</p></td>
                             <td class="precio"><p>$ {{$producto->price}}</p></td>
