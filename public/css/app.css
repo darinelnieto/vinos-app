@@ -10076,6 +10076,29 @@ html {
   outline: none;
 }
 
+.bar-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .loginRedirect {
+    display: none;
+  }
+
+  .bar-menu {
+    display: block;
+    color: white !important;
+    float: right;
+  }
+
+  .bar-menu:hover, .bar-menu:focus {
+    color: white !important;
+  }
+
+  .menuHome .nav-bar {
+    display: none;
+  }
+}
 /*--------------------style seccion somos---------------------*/
 #somos {
   display: flex;

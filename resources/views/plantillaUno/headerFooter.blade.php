@@ -16,7 +16,8 @@
             <div class="col-3">
                 <a href="{{route('login')}}" class="loginRedirect"><i class="fas fa-user-tie"></i> Login</a>
             </div>
-            <div class="col-9">
+            <div class="col-12 col-lg-9 col-xl-9 menuHome">
+                <a href="" class="bar-menu"><i class="fas fa-bars"></i></a>
                 <ul class="nav-bar mb-0">
                     <li class="nav-item">
                         <a href="#inicio" class="nav-link">Inicio</a>

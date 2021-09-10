@@ -14,3 +14,7 @@ $(window).on('scroll', function(){
         });
     }
 });
+$('.bar-menu').on('click', function(e){
+    $('.menuHome > .nav-bar').slideToggle();
+    e.preventDefault();
+});

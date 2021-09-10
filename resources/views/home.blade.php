@@ -43,7 +43,7 @@
         <div class="izquierdaBannerCentral">
             <div class="container">
                 <div class="row">
-                    <div class="col-8 mb-md-5 offset-2">
+                    <div class="col-12 mb-md-5 offset-2">
                         <h4 class="tituloProducto">La Viña Del Vino</h4>
                         <p class="infoBannerCentro">Sin duda es el mejor vino de <br> corozo que podrás probar</p>
                         <a href="" class="botonBannerVerProducto">Ver Producto</a>
