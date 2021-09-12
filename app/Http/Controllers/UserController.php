@@ -98,7 +98,7 @@ class UserController extends Controller
     }
     public function historialCuadre(Request $request){
         $cuadres = User::find($request->id);
-        
-        return $cuadres->Squares;
+        $datos = $cuadres->Squares;
+        return view('ListaCuadreCaja', compact('datos'));
     }
 }

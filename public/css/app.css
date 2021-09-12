@@ -11425,3 +11425,19 @@ table {
 #mensaje {
   display: none;
 }
+
+.trHistorialCuadre {
+  background: white;
+}
+.trHistorialCuadre td {
+  padding: 0.2% 1%;
+  border: 1px solid #cacaca;
+}
+
+.tbodyHistorial {
+  background: white;
+}
+.tbodyHistorial td {
+  padding: 0.2% 1%;
+  border: 1px solid #cacaca;
+}
