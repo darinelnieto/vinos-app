@@ -1,10 +1,4 @@
 <div class="headerAdminiUser">
-    <div class="contenFormu">
-        <form action="" class="formSearch">
-            <input type="search" name="name" class="searchUser" placeholder="Nombre del producto...">
-            <button type="submit" class="btnSearch"><i class="fas fa-search"></i></button>
-        </form>
-    </div>
     <div class="modalAddMore">
         <a href="" type="button" class="AddMoreUserModal" data-toggle="modal" data-target="#modalNewUser"><i class="fas fa-user-plus"></i></a>
     </div>
@@ -70,17 +64,17 @@
 @if (Session::has('exito'))
     <div id="mensajeExito"><p>{{ Session::get('exito') }}</p></div>
 @endif
-<div class="bodyUser mt-3">
-    <table>
+<div class="bodyUser mt-3 tableReporteCuadreCaja">
+    <table id="usuariosAdmin">
         <thead>
             <tr>
-                <td class="TH"><p>Nombre</p></td>
-                <td class="TH"><p>Email</p></td>
-                <td class="TH"><p>Teléfono</p></td>
-                <td class="TH"><p>Rol</p></td>
-                <td class="TH"><p>Contraseña</p></td>
-                <td class="TH"><p>Estado</p></td>
-                <td class="TH"></td>
+                <th class="TH"><p>Nombre</p></th>
+                <th class="TH"><p>Email</p></th>
+                <th class="TH"><p>Teléfono</p></th>
+                <th class="TH"><p>Rol</p></th>
+                <th class="TH"><p>Contraseña</p></th>
+                <th class="TH"><p>Estado</p></th>
+                <th class="TH"></th>
             </tr>
         </thead>
         <tbody>
@@ -90,7 +84,7 @@
                     <td class="email"><p>{{$usuario->email}}</p></td>
                     <td class="telefono"><p>{{$usuario->phone}}</p></td>
                     <td class="rol"><p>{{$usuario->rol}}</p></td>
-                    <td class="password"><p class="pPassword">{{$usuario->password}}</p></td>
+                    <td class="password"><p class="pPassword">**************</p></td>
                     <td class="estado"><p>{{$usuario->state}}</p></td>
                     <td class="botones">
                         <div class="botonesAdminUser">
@@ -112,5 +106,4 @@
             @endforeach
         </tbody>
     </table>
-    {{$usuarios->links()}}
 </div>

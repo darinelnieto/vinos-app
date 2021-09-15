@@ -10582,7 +10582,7 @@ table {
 
 .headerAdminiUser {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 
 .formSearch {
@@ -10709,6 +10709,7 @@ table {
 .TH {
   background: white;
   border: 1px solid #cacaca;
+  height: 35px;
 }
 .TH p {
   margin: 0 7px;
@@ -10761,6 +10762,10 @@ table {
   width: 200px;
   overflow: hidden;
   margin: 3%;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-size: 20px;
+  text-align: center;
 }
 
 #modalMensaje {
@@ -10787,6 +10792,17 @@ table {
 
 .closeForm {
   color: #777;
+}
+
+#usuariosAdmin_filter label input, #proucTable_filter label input {
+  border: none;
+  border-radius: 4px;
+  width: 300px;
+}
+
+.custom-select.custom-select-sm.form-control.form-control-sm {
+  border: none;
+  border-radius: 4px;
 }
 
 @font-face {
@@ -11428,16 +11444,51 @@ table {
 
 .trHistorialCuadre {
   background: white;
+  border: 1px solid #cacaca;
+  border-collapse: collapse !important;
+}
+.trHistorialCuadre .Fecha {
+  border: 1px solid #cacaca;
 }
 .trHistorialCuadre td {
   padding: 0.2% 1%;
-  border: 1px solid #cacaca;
 }
 
 .tbodyHistorial {
   background: white;
 }
-.tbodyHistorial td {
-  padding: 0.2% 1%;
+.tbodyHistorial tr {
   border: 1px solid #cacaca;
+  border-collapse: collapse !important;
+}
+.tbodyHistorial tr td {
+  padding: 0.5% 1%;
+}
+.tbodyHistorial tr .Fecha {
+  border: 1px solid #cacaca;
+}
+
+.busquedaFecha {
+  border-radius: 20px;
+  border: none;
+  padding: 3px 20px;
+  outline: none;
+}
+
+.tableReporteCuadreCaja {
+  height: 70vh;
+  overflow-y: scroll;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#reporteCuadreCaja_paginate, #proucTable_paginate, #usuariosAdmin_paginate {
+  position: fixed;
+  right: 4%;
+  bottom: 8%;
+  z-index: 100;
+}
+
+table.dataTable {
+  border-collapse: collapse !important;
 }

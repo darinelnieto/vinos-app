@@ -3,13 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-xl-12">
-            <div class="headerAdminiUser">
-                <div class="contenFormu">
-                    <form action="" class="formSearch">
-                        <input type="search" name="name" class="searchUser" placeholder="Nombre del producto...">
-                        <button type="submit" class="btnSearch"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
+            <div class="headerAdminProduct">
                 <div class="modalAddMore">
                     <a href="" type="button" class="AddMoreCode" data-toggle="modal" data-target="#modalCode"><i class="fas fa-barcode"></i></a>
                     <a href="" class="AddMoreProduct"><i class="fas fa-archive"></i></a>
@@ -56,8 +50,8 @@
                 @if (Session::has('Exito'))
                     <div id="mensajeExito"><p>{{ Session::get('Exito') }}</p></div>
                 @endif
-                <div class="productos mt-3">
-                    <table>
+                <div class="productos mt-3 tableReporteCuadreCaja">
+                    <table id="proucTable">
                         <thead>
                             <tr>
                                 <td class="tHead"><p>Imagen</p></td>
@@ -89,9 +83,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    <div class="paginador mt-3">
-                        {{$productos->links()}}
-                    </div>
                 </div>
             </div>
         </div>

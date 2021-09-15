@@ -34,7 +34,7 @@ class UserController extends Controller
 
     function validado(){
         
-        $usuarios = DB::table('users')->paginate(10);
+        $usuarios = DB::table('users')->get();
 
         return view('appVinosAdmin', compact('usuarios'));
 

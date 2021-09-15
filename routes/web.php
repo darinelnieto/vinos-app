@@ -78,3 +78,5 @@ Route::post('final/cuadreDeCaja', 'SquareController@finaliza')->name('cuadre.fin
 // historial de usuario
 
 Route::get('historial/cuadreDeCaja', 'UserController@historialCuadre')->name('historia.cuadre.caja');
+
+Route::get('cuadre/fecha/data', 'UserController@fechaCuadre')->name('dia.cuadre');

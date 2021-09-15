@@ -1,15 +1,22 @@
 $(document).ready(function(){
     fecha = new Date();
 
-    anio = fecha.getFullYear();
-    mes = fecha.getMonth() + 1;
-    dia = fecha.getDate();
-    hora = fecha.getHours();
-    minuto = fecha.getMinutes();
+    anio = fecha.getFullYear()
+    mes = fecha.getMonth() + 1
+    dia = fecha.getDate()
+    hora = fecha.getHours()
+    minuto = fecha.getMinutes()
 
     $('.fechaHeader').html(`${anio}-${mes}-${dia}`);
     $('.horaHeader').html(`${hora}:${minuto}`);
-    $('.fecha').val(`${anio}-${mes}-${dia}`);
+    if(mes < 10){
+        $('.fecha').val(`${anio}-0${mes}-${dia}`);
+        $('.fechaHeader').html(`${anio}-0${mes}-${dia}`);
+    }else{
+        $('.fecha').val(`${anio}-${mes}-${dia}`);
+        $('.fechaHeader').html(`${anio}-${mes}-${dia}`);
+    }
+    
     $('.hora').val(`${hora}:${minuto}`);
 });
 $('.unidadCuadre').change(function(){

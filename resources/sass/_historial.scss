@@ -1,14 +1,45 @@
 .trHistorialCuadre{
     background:white;
+    border: 1px solid #cacaca;
+    border-collapse: collapse !important;
+    .Fecha{
+        border: 1px solid #cacaca;
+    }
     td{
         padding: .2% 1%;
-        border: 1px solid #cacaca;
     }
 }
 .tbodyHistorial{
-    background:white;        
-    td{
-        padding: .2% 1%;
+    background:white;
+    tr{
         border: 1px solid #cacaca;
-    }
+        border-collapse: collapse !important;
+        td{
+            padding: .5% 1%;
+        }
+        .Fecha{
+            border: 1px solid #cacaca;
+        }
+    }       
+}
+.busquedaFecha{
+    border-radius: 20px;
+    border: none;
+    padding: 3px 20px;
+    outline: none;
+}
+.tableReporteCuadreCaja{
+    height: 70vh;
+    overflow-y: scroll;
+    position: relative;
+    overflow-x: hidden;
+}
+#reporteCuadreCaja_paginate, #proucTable_paginate, #usuariosAdmin_paginate{
+    position:fixed;
+    right: 4%;
+    bottom: 8%;
+    z-index: 100;
+}
+table.dataTable{
+    border-collapse: collapse !important;
 }
